@@ -3,13 +3,13 @@ package token
 type TokenType string
 
 var keywords = map[string]TokenType{
-	"fn":  FUNCTION,
-	"let": LET,
-	"if": IF,
-	"else": ELSE,
+	"fn":     FUNCTION,
+	"let":    LET,
+	"if":     IF,
+	"else":   ELSE,
 	"return": RETURN,
-	"true": TRUE,
-	"false": FALSE,
+	"true":   TRUE,
+	"false":  FALSE,
 }
 
 func LookupIdent(ident string) TokenType {
@@ -31,14 +31,14 @@ const (
 	IDENT = "IDENT"
 	INT   = "INT"
 
-	ASSIGN    = "ASSIGN"
-	PLUS      = "+"
-	MINUS      = "-"
-	BANG      = "!"
-	ASTERISK      = "*"
-	SLASH      = "/"
-	LT      = "<"
-	GT      = ">"
+	ASSIGN   = "ASSIGN"
+	PLUS     = "+"
+	MINUS    = "-"
+	BANG     = "!"
+	ASTERISK = "*"
+	SLASH    = "/"
+	LT       = "<"
+	GT       = ">"
 
 	COMMA     = ","
 	SEMICOLON = ";"
@@ -50,13 +50,12 @@ const (
 
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
-	IF = "IF"
-	ELSE = "ELSE"
-	RETURN = "RETURN"
-	TRUE = "TRUE"
-	FALSE = "FALSE"
+	IF       = "IF"
+	ELSE     = "ELSE"
+	RETURN   = "RETURN"
+	TRUE     = "TRUE"
+	FALSE    = "FALSE"
 
-	EQ = "EQUAL"
+	EQ     = "EQUAL"
 	NOT_EQ = "NOTEQUAL"
-
 )

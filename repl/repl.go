@@ -1,16 +1,16 @@
 package repl
 
 import (
-	"io"
 	"bufio"
 	"fmt"
 	"interpreterInGo/lexer"
 	"interpreterInGo/token"
+	"io"
 )
 
 const PROMPT = ">> "
 
-func Start(in io.Reader, out io.Writer)  {
+func Start(in io.Reader, out io.Writer) {
 	scanner := bufio.NewScanner(in)
 	for {
 		fmt.Printf(PROMPT)
@@ -25,4 +25,3 @@ func Start(in io.Reader, out io.Writer)  {
 		}
 	}
 }
-
