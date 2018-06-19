@@ -56,4 +56,7 @@ const (
 	TRUE = "TRUE"
 	FALSE = "FALSE"
 
+	EQ = "EQUAL"
+	NOT_EQ = "NOTEQUAL"
+
 )
