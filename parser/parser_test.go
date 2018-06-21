@@ -1,9 +1,9 @@
 package parser
 
 import (
-	"testing"
-	"interpreterInGo/lexer"
 	"interpreterInGo/ast"
+	"interpreterInGo/lexer"
+	"testing"
 )
 
 func TestLetStatement(t *testing.T) {
@@ -41,22 +41,22 @@ let foobar = 4859834;
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
 	if s.TokenLiteral() != "let" {
-		t.Errorf("s.Tokenliteral is not 'let'. got: %q" , s.TokenLiteral())
+		t.Errorf("s.Tokenliteral is not 'let'. got: %q", s.TokenLiteral())
 		return false
 	}
 	letstmt, ok := s.(*ast.LetStatement)
 	if !ok {
-		t.Errorf("s is not '*ast.LetStatement'. got: %T" , s)
+		t.Errorf("s is not '*ast.LetStatement'. got: %T", s)
 		return false
 	}
 
 	if letstmt.Name.Value != name {
-		t.Errorf("letstmt.Name.Value is not %s. got: %s" , name, letstmt.Name.Value)
+		t.Errorf("letstmt.Name.Value is not %s. got: %s", name, letstmt.Name.Value)
 		return false
 	}
 
 	if letstmt.Name.TokenLiteral() != name {
-		t.Errorf("letstmt.Name.TokenLiteral() is not %s. got: %s" , name, letstmt.Name.TokenLiteral())
+		t.Errorf("letstmt.Name.TokenLiteral() is not %s. got: %s", name, letstmt.Name.TokenLiteral())
 		return false
 	}
 

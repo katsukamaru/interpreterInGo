@@ -1,25 +1,25 @@
 package parser
 
 import (
+	"interpreterInGo/ast"
 	"interpreterInGo/lexer"
 	"interpreterInGo/token"
-	"interpreterInGo/ast"
 )
 
 type Parser struct {
-	l *lexer.Lexer
-	curToken token.Token
+	l         *lexer.Lexer
+	curToken  token.Token
 	peekToken token.Token
 }
 
 func New(l *lexer.Lexer) *Parser {
-	p := &Parser{l:l}
+	p := &Parser{l: l}
 	p.nextToken()
 	p.nextToken()
 	return p
 }
 
-func (p *Parser) nextToken()  {
+func (p *Parser) nextToken() {
 	p.curToken = p.peekToken
 	p.peekToken = p.l.NextToken()
 }
@@ -38,7 +38,7 @@ func (p *Parser) ParseProgram() *ast.Program {
 	return program
 }
 
-func (p *Parser) parseStatement() ast.Statement  {
+func (p *Parser) parseStatement() ast.Statement {
 	switch p.curToken.Type {
 	case token.LET:
 		return p.parseLetStatement()
